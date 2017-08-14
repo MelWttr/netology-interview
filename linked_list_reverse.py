@@ -3,9 +3,11 @@
 с тонкостями языка"
 
 Описание
-    Перестроить заданный связанный список (LinkedList) в обратном порядке.
+    1. Перестроить заданный связанный список (LinkedList) в обратном порядке.
     Для этого использовать метод `LinkedList.reverse()`, представленный
-    в данном файле
+    в данном файле.
+    2. Определить сложность алгоритма.
+    3. Определить потребление памяти в big-O notation.
 
 Примечание
     Проверить работоспособность решения можно при помощи тестов,
@@ -25,9 +27,6 @@ class LinkedListNode:
         self.data = data
         self.next = None  # type: LinkedListNode
 
-    def link(self, node: 'LinkedListNode') -> None:
-        self.next = node
-
 
 class LinkedList:
 
@@ -37,7 +36,7 @@ class LinkedList:
         for value in values:
             current = LinkedListNode(value)
             if previous:
-                previous.link(current)
+                previous.next = current
             self.head = self.head or current
             previous = current
 
